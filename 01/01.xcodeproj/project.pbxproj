@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E8786C062439D73D00D81554 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8786C052439D73D00D81554 /* MenuView.swift */; };
+		E87A3F1C2439ECF8008497A2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A3F1B2439ECF8008497A2 /* Home.swift */; };
 		E88438CC24365BF800414007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88438CB24365BF800414007 /* AppDelegate.swift */; };
 		E88438CE24365BF800414007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88438CD24365BF800414007 /* SceneDelegate.swift */; };
 		E88438D024365BF800414007 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88438CF24365BF800414007 /* ContentView.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		E8786C052439D73D00D81554 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		E87A3F1B2439ECF8008497A2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E88438C824365BF700414007 /* 01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E88438CB24365BF800414007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E88438CD24365BF800414007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				E88438CB24365BF800414007 /* AppDelegate.swift */,
 				E88438CD24365BF800414007 /* SceneDelegate.swift */,
 				E88438CF24365BF800414007 /* ContentView.swift */,
+				E87A3F1B2439ECF8008497A2 /* Home.swift */,
 				E8786C052439D73D00D81554 /* MenuView.swift */,
 				E88438D124365BF900414007 /* Assets.xcassets */,
 				E88438D624365BF900414007 /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 			files = (
 				E88438CC24365BF800414007 /* AppDelegate.swift in Sources */,
 				E8786C062439D73D00D81554 /* MenuView.swift in Sources */,
+				E87A3F1C2439ECF8008497A2 /* Home.swift in Sources */,
 				E88438CE24365BF800414007 /* SceneDelegate.swift in Sources */,
 				E88438D024365BF800414007 /* ContentView.swift in Sources */,
 			);
