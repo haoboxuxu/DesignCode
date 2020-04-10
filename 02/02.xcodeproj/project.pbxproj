@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80261BF24400183002D724A /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80261BE24400183002D724A /* RingView.swift */; };
 		E8099FAF243CDAE600BB0BBD /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8099FAE243CDAE600BB0BBD /* CourseDetail.swift */; };
 		E84E23D1243DBC9F00A1A78D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E23D0243DBC9F00A1A78D /* Data.swift */; };
 		E84E23D3243DBDF400A1A78D /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E23D2243DBDF400A1A78D /* PostList.swift */; };
 		E84E23D5243DC1ED00A1A78D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E23D4243DC1ED00A1A78D /* DataStore.swift */; };
-		E84E23D8243DE69D00A1A78D /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = E84E23D7243DE69D00A1A78D /* Contentful */; };
 		E84E23DA243DE94000A1A78D /* CourseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E23D9243DE94000A1A78D /* CourseStore.swift */; };
-		E84E23DD243DFBC500A1A78D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E84E23DC243DFBC500A1A78D /* SDWebImageSwiftUI */; };
-		E85C9BC5243BAE6C00C00EE6 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9BC4243BAE6C00C00EE6 /* RingView.swift */; };
 		E85C9BC7243BB8AE00C00EE6 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9BC6243BB8AE00C00EE6 /* Modifiers.swift */; };
 		E85C9BC9243BBA7300C00EE6 /* Work_Sans in Resources */ = {isa = PBXBuildFile; fileRef = E85C9BC8243BBA7300C00EE6 /* Work_Sans */; };
 		E8786C062439D73D00D81554 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8786C052439D73D00D81554 /* MenuView.swift */; };
@@ -54,12 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E80261BE24400183002D724A /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		E8099FAE243CDAE600BB0BBD /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
 		E84E23D0243DBC9F00A1A78D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		E84E23D2243DBDF400A1A78D /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		E84E23D4243DC1ED00A1A78D /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		E84E23D9243DE94000A1A78D /* CourseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStore.swift; sourceTree = "<group>"; };
-		E85C9BC4243BAE6C00C00EE6 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RingView.swift; path = ../../../../RingView.swift; sourceTree = "<group>"; };
 		E85C9BC6243BB8AE00C00EE6 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		E85C9BC8243BBA7300C00EE6 /* Work_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Work_Sans; sourceTree = "<group>"; };
 		E8786C052439D73D00D81554 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -92,8 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E84E23DD243DFBC500A1A78D /* SDWebImageSwiftUI in Frameworks */,
-				E84E23D8243DE69D00A1A78D /* Contentful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +136,8 @@
 				E88438CB24365BF800414007 /* AppDelegate.swift */,
 				E88438CD24365BF800414007 /* SceneDelegate.swift */,
 				E88438CF24365BF800414007 /* ContentView.swift */,
-				E85C9BC4243BAE6C00C00EE6 /* RingView.swift */,
 				E85C9BC6243BB8AE00C00EE6 /* Modifiers.swift */,
+				E80261BE24400183002D724A /* RingView.swift */,
 				E87A3F1B2439ECF8008497A2 /* Home.swift */,
 				E87A3F1D2439F6DC008497A2 /* HomeView.swift */,
 				E8DE8899243C893400E9003A /* CourseList.swift */,
@@ -208,8 +204,6 @@
 			);
 			name = 02;
 			packageProductDependencies = (
-				E84E23D7243DE69D00A1A78D /* Contentful */,
-				E84E23DC243DFBC500A1A78D /* SDWebImageSwiftUI */,
 			);
 			productName = 01;
 			productReference = E88438C824365BF700414007 /* 02.app */;
@@ -336,11 +330,11 @@
 				E84E23D1243DBC9F00A1A78D /* Data.swift in Sources */,
 				E84E23D5243DC1ED00A1A78D /* DataStore.swift in Sources */,
 				E8795ECE243B384F00652234 /* UpdateStore.swift in Sources */,
+				E80261BF24400183002D724A /* RingView.swift in Sources */,
 				E8795ECA243A4D6E00652234 /* UpdateList.swift in Sources */,
 				E8786C062439D73D00D81554 /* MenuView.swift in Sources */,
 				E85C9BC7243BB8AE00C00EE6 /* Modifiers.swift in Sources */,
 				E8795ECC243B28A100652234 /* UpdateDetail.swift in Sources */,
-				E85C9BC5243BAE6C00C00EE6 /* RingView.swift in Sources */,
 				E87A3F1C2439ECF8008497A2 /* Home.swift in Sources */,
 				E87A3F1E2439F6DC008497A2 /* HomeView.swift in Sources */,
 				E88438CE24365BF800414007 /* SceneDelegate.swift in Sources */,
@@ -693,19 +687,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E84E23D7243DE69D00A1A78D /* Contentful */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E84E23D6243DE69D00A1A78D /* XCRemoteSwiftPackageReference "contentful.swift" */;
-			productName = Contentful;
-		};
-		E84E23DC243DFBC500A1A78D /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E84E23DB243DFBC500A1A78D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E88438C024365BF700414007 /* Project object */;
 }
