@@ -21,29 +21,50 @@ struct CoursesView: View {
                     spacing: 16
                 ) {
                     ForEach(courses) { item in
-                        CourseItem(course: item)
-                            .matchedGeometryEffect(id: item.id, in: namespace, isSource: !show)
-                            .frame(height: 200)
-                            .onTapGesture {
-                                withAnimation(.spring()) {
-                                    show.toggle()
-                                    selectItem = item
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                        isDisabled = true
+                        VStack {
+                            CourseItem(course: item)
+                                .matchedGeometryEffect(id: item.id, in: namespace, isSource: !show)
+                                .frame(height: 200)
+                                .onTapGesture {
+                                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)) {
+                                        show.toggle()
+                                        selectItem = item
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                            isDisabled = true
+                                        }
                                     }
                                 }
-                            }
-                            .disabled(isDisabled)
+                                .disabled(isDisabled)
+                        }
+                        .matchedGeometryEffect(id: "container\(item.id)", in: namespace, isSource: !show)
                     }
                 }
                 .padding(16)
                 .frame(maxWidth: .infinity)
             }
+            .zIndex(1)
             if selectItem != nil {
-                ScrollView {
-                    CourseItem(course: selectItem!)
-                        .matchedGeometryEffect(id: selectItem!.id, in: namespace)
-                        .frame(height: 300)
+                ZStack(alignment: .topTrailing) {
+                    VStack {
+                        ScrollView {
+                            CourseItem(course: selectItem!)
+                                .matchedGeometryEffect(id: selectItem!.id, in: namespace)
+                                .frame(height: 300)
+                            VStack {
+                                ForEach(0 ..< 20) { item in
+                                    CourseRow()
+                                }
+                            }
+                            .padding()
+                        }
+                    }
+                    .background(Color("Background 1"))
+                    .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+                    .matchedGeometryEffect(id: "container\(selectItem!.id)", in: namespace)
+                    .edgesIgnoringSafeArea(.all)
+                    
+                    CloseButton()
+                        .padding(.trailing, 16)
                         .onTapGesture {
                             withAnimation(.spring()) {
                                 show.toggle()
@@ -51,26 +72,10 @@ struct CoursesView: View {
                                 isDisabled = false
                             }
                         }
-                    VStack {
-                        ForEach(0 ..< 20) { item in
-                            CourseRow()
-                        }
-                    }
-                    .padding()
                 }
-                .background(Color("Background 1"))
-                .transition(
-                    .asymmetric(
-                        insertion: AnyTransition
-                                    .opacity.animation(Animation.spring().delay(0.3)),
-                        removal: AnyTransition
-                                .opacity.animation(.spring()))
-                )
-                .edgesIgnoringSafeArea(.all)
+                .zIndex(2)
             }
         }
-        
-        
     }
 }
 
