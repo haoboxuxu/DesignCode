@@ -15,7 +15,30 @@ struct CoursesView: View {
     
     var body: some View {
         ZStack {
-            ScrollView {
+            #if os(iOS)
+            content
+                .navigationBarHidden(true)
+            fullContent
+                .background(VisualEffectBlur(blurStyle: .systemMaterial).edgesIgnoringSafeArea(.all))
+            #else
+            content
+            fullContent
+                .background(VisualEffectBlur().edgesIgnoringSafeArea(.all))
+            #endif
+        }
+        .navigationTitle("Courses")
+    }
+    
+    var content: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                Text("Courses")
+                    .font(.largeTitle)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 16)
+                    .padding(.top, 54)
+                
                 LazyVGrid(
                     columns: [GridItem(.adaptive(minimum: 160), spacing: 16)],
                     spacing: 16
@@ -41,40 +64,43 @@ struct CoursesView: View {
                 }
                 .padding(16)
                 .frame(maxWidth: .infinity)
+                
+                Text("Lastest sections")
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                
+                LazyVGrid(
+                    columns: [GridItem(.adaptive(minimum: 240))]) {
+                    ForEach(courseSections) { item in
+                        CourseRow(item: item)
+                    }
+                }
+                .padding()
             }
-            .zIndex(1)
-            if selectItem != nil {
-                ZStack(alignment: .topTrailing) {
-                    VStack {
-                        ScrollView {
-                            CourseItem(course: selectItem!)
-                                .matchedGeometryEffect(id: selectItem!.id, in: namespace)
-                                .frame(height: 300)
-                            VStack {
-                                ForEach(0 ..< 20) { item in
-                                    CourseRow()
-                                }
-                            }
-                            .padding()
+        }
+        .zIndex(1)
+    }
+    
+    @ViewBuilder
+    var fullContent: some View {
+        if selectItem != nil {
+            ZStack(alignment: .topTrailing) {
+                CourseDetail(course: selectItem!, namespace: namespace)
+                
+                CloseButton()
+                    .padding(16)
+                    .onTapGesture {
+                        withAnimation(.spring()) {
+                            show.toggle()
+                            selectItem = nil
+                            isDisabled = false
                         }
                     }
-                    .background(Color("Background 1"))
-                    .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-                    .matchedGeometryEffect(id: "container\(selectItem!.id)", in: namespace)
-                    .edgesIgnoringSafeArea(.all)
-                    
-                    CloseButton()
-                        .padding(.trailing, 16)
-                        .onTapGesture {
-                            withAnimation(.spring()) {
-                                show.toggle()
-                                selectItem = nil
-                                isDisabled = false
-                            }
-                        }
-                }
-                .zIndex(2)
             }
+            .zIndex(2)
+            .frame(maxWidth: 712)
+            .frame(maxWidth: .infinity)
         }
     }
 }
